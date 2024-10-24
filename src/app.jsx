@@ -1,48 +1,23 @@
 import React from "react";
-class Button extends React.Component {
-  render(){
+const Button = (props) => {
+  const { children= "...", variant = "bg-black"} = props;
   return (
-    <button
-          className="h-10 px-6 font-semibolt rounded-md bg-red-500 text-white"
-          type="submit"
-        >
-          Beli Sekarang
-        </button>
-  
-  );
-}
-}
-function ButtonYellow() {
-  return (
-    <button
-          className="h-10 px-6 font-semibolt rounded-md bg-yellow-500 text-white"
-          type="submit"
-        >
-          Beli Sekarang
-        </button>
-  );
-}
-function ButtonGreen() {
-  return (
-    <button
-          className="h-10 px-6 font-semibolt rounded-md bg-green-500 text-white"
-          type="submit"
-        >
-          Beli Sekarang
-        </button>
+    <button className={`h-10 px-6 font-semibold rounded-md ${variant} text-white`} type="submit">
+    {children}
+      </button>
   );
 }
 function App() {
-return (
-    <div className="flex justify-center bg-purple-400 min-h-screen items-center">
-      <div>
-        <Button></Button>
-        <Button></Button>
-        <ButtonYellow></ButtonYellow>
-        <ButtonGreen></ButtonGreen>
+  return (
+    <div className="flex justify-center bg-cyan-100 min-h-screen items-center">
+      <div className="flex gap-x-3">
+      <Button variant="bg-green-300">Login</Button>
+      <Button variant="bg-blue-400">Logout</Button>
+      <Button></Button>
+      <Button variant="bg-red-500">Submit</Button>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
